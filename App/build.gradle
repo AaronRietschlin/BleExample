@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'https://github.com/DuetHealth/mvn-repo/raw/master/'
+    }
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.0"
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 19
+    }
+    buildTypes {
+        release {
+        }
+    }
+    productFlavors {
+        defaultFlavor {
+        }
+    }
+}
+
+dependencies {
+    compile 'com.jakewharton:butterknife:3.0.0'
+    compile 'com.duethealth.lib.component:dh_android_component:1.1.1'
+}
